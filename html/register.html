@@ -26,7 +26,7 @@
         <div class="position-absolute w-100">
           <div
             class="container bg-white bg-opacity-50 px-5 w-md-100 text-center h-100 py-5 rounded"
-            style="width: 85%; min-width: 300px;"
+            style="width: 85%; min-width: 300px"
           >
             <div class="row justify-center">
               <div class="col-md-6 my-auto d-none d-md-block">
@@ -90,6 +90,33 @@
                           aria-label="Username"
                         />
                       </div>
+                      <div class="col-md-6 mb-2">
+                        <label for="register_as" class="form-label"
+                          >Register As</label
+                        >
+                        <select
+                          id="register_as"
+                          class="form-select"
+                          aria-label="Select Role"
+                        >
+                          <option selected disabled>Select Role</option>
+                          <option value="employee">Employee</option>
+                          <option value="user">User</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6 mb-2">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select
+                          id="gender"
+                          class="form-select"
+                          aria-label="Select Gender"
+                        >
+                          <option selected disabled>Select Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
                       <div class="col-md-12 mb-2">
                         <label for="phone_number" class="form-label"
                           >Phone Number</label
@@ -145,47 +172,6 @@
                           placeholder="Type to select..."
                         />
                         <datalist id="dateDatalist"> </datalist>
-                      </div>
-                    </div>
-                    <div class="'my-2 d-flex gap-2">
-                      <label for="gender" class="form-label fw-bold pr-4"
-                        >Gender:
-                      </label>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="genderOptions"
-                          id="maleOption"
-                          value="male"
-                        />
-                        <label class="form-check-label" for="maleOption"
-                          >Male</label
-                        >
-                      </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="genderOptions"
-                          id="femaleOption"
-                          value="female"
-                        />
-                        <label class="form-check-label" for="femaleOption"
-                          >Female</label
-                        >
-                      </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="genderOptions"
-                          id="otherOption"
-                          value="other"
-                        />
-                        <label class="form-check-label" for="otherOption"
-                          >Other</label
-                        >
                       </div>
                     </div>
                     <div class="row">
