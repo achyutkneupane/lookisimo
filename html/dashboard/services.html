@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Lookisimo</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+  </head>
+
+  <body class="bg-white">
+    <script src="../../js/navbar.js"></script>
+    <div
+      class="vw-100 bg-white text-black"
+      style="padding-top: 10rem; padding-bottom: 5rem"
+    >
+      <div class="container">
+        <div class="row justify-content-center w-100 g-4">
+          <script src="../../js/sidebar.js"></script>
+          <div class="col-md-8 overflow-scroll" style="height: 700px">
+            <div class="card">
+              <div class="card-header">Add Service Category</div>
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="category_title" class="form-label"
+                      >Category Title</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="category_title"
+                      aria-describedby="categoryTitleHelo"
+                      placeholder="Enter Category Title"
+                    />
+                    <div id="categoryTitleHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">+ Add</button>
+                </form>
+              </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card-header">Add Service Name</div>
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="service_name" class="form-label"
+                      >Service Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="service_name"
+                      aria-describedby="serviceNameHelp"
+                      placeholder="Enter Service Name"
+                    />
+                    <div id="serviceNameHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="service_description" class="form-label"
+                      >Description</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="service_description"
+                      aria-describedby="serviceDescHelp"
+                      placeholder="Enter Service Description"
+                    />
+                    <div id="serviceDescHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="category_title" class="form-label"
+                      >Category</label
+                    >
+                    <input
+                      class="form-control"
+                      list="categoryOptions"
+                      id="category_title"
+                      aria-describedby="categoryHelp"
+                      placeholder="Type to search for category..."
+                    />
+                    <datalist id="categoryOptions">
+                      <option value="Category 1" />
+                      <option value="Category 2" />
+                      <option value="Manicure" />
+                      <option value="Category 3" />
+                      <option value="Category 4" />
+                      <option value="Category 5" />
+                      <option value="Category 6" />
+                    </datalist>
+                    <div id="categoryHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="service_price" class="form-label"
+                      >Service Price</label
+                    >
+                    <div class="input-group mb-3">
+                      <span class="input-group-text">Rs. </span>
+                      <input
+                        type="number"
+                        step="0.01"
+                        class="form-control"
+                        aria-label="Amount in Rupees"
+                        id="service_price"
+                        aria-describedby="amountHelp"
+                        placeholder="Service Price (in Rupees)"
+                      />
+                      <div id="amountHelp" class="form-text text-danger">
+                        <!-- Add error text here -->
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">+ Add</button>
+                </form>
+              </div>
+            </div>
+            <div class="card mt-4">
+              <div class="card-header">Service List</div>
+              <div class="card-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service #</th>
+                      <th scope="col">Service Name</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Category Title</th>
+                      <th scope="col">Service Price</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="my-auto">
+                      <th scope="row">1</th>
+                      <td>Manicure Express</td>
+                      <td>Cut, File, and Paint</td>
+                      <td class="fw-bold">Manicure</td>
+                      <td>Rs. 500</td>
+                      <td class="d-flex flex-row gap-2">
+                        <button
+                          type="button"
+                          class="btn btn-warning"
+                          data-bs-toggle="modal"
+                          data-bs-target="#serviceModal1Edit"
+                        >
+                          Edit
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          data-bs-toggle="modal"
+                          data-bs-target="#serviceModal1Delete"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Edit Modal -->
+    <div
+      class="modal fade"
+      id="serviceModal1Edit"
+      tabindex="-1"
+      aria-labelledby="serviceModal1EditLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="serviceModal1EditLabel">
+              Edit Manicure Express
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="service_name_edit" class="form-label"
+                  >Service Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="service_name_edit"
+                  aria-describedby="serviceNameEditHelp"
+                  placeholder="Enter Service Name"
+                  value="Manicure Express"
+                />
+                <div id="serviceNameEditHelp" class="form-text text-danger">
+                  <!-- Add error text here -->
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="service_description_edit" class="form-label"
+                  >Description</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="service_description_edit"
+                  aria-describedby="serviceDescEditHelp"
+                  placeholder="Enter Service Description"
+                  value="Cut, File, and Paint"
+                />
+                <div id="serviceDescEditHelp" class="form-text text-danger">
+                  <!-- Add error text here -->
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="category_title_edit" class="form-label">Category</label>
+                <input
+                  class="form-control"
+                  list="categoryOptions"
+                  id="category_title_edit"
+                  aria-describedby="categoryEditHelp"
+                  placeholder="Type to search for category..."
+                />
+                <datalist id="categoryOptions">
+                  <option value="Category 1" />
+                  <option value="Category 2" />
+                  <option value="Manicure" />
+                  <option value="Category 3" />
+                  <option value="Category 4" />
+                  <option value="Category 5" />
+                  <option value="Category 6" />
+                </datalist>
+                <div id="categoryEditHelp" class="form-text text-danger">
+                  <!-- Add error text here -->
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="service_price_edit" class="form-label"
+                  >Service Price</label
+                >
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Rs. </span>
+                  <input
+                    type="number"
+                    step="0.01"
+                    class="form-control"
+                    aria-label="Amount in Rupees"
+                    id="service_price_edit"
+                    aria-describedby="amountEditHelp"
+                    placeholder="Service Price (in Rupees)"
+                    value="500"
+                  />
+                  <div id="amountEditHelp" class="form-text text-danger">
+                    <!-- Add error text here -->
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-warning">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div
+      class="modal fade"
+      id="serviceModal1Delete"
+      tabindex="-1"
+      aria-labelledby="serviceModal1DeleteLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="serviceModal1EditLabel">
+              Delete Manicure Express
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Do you want to delete Manicure Express?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../bootstrap/js/bootstrap.min.js" defer></script>
+  </body>
+</html>

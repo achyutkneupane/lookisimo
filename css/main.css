@@ -1,3 +1,14 @@
+.fw-normal.accordion-button.collapsed::after {
+
+    background: url("your.svg");
+  
+  }
+  
+  .fw-normal.accordion-button:not(.collapsed)::after {
+  
+    background: url("your.svg");
+  
+  }
 @media only screen and (min-width: 768px) {
     .carousel-inner {
         max-height: 60vh;
