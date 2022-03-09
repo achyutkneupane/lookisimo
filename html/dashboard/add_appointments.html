@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - Lookisimo</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+  </head>
+
+  <body class="bg-white">
+    <script src="../../js/navbar.js"></script>
+    <div
+      class="vw-100 bg-white text-black"
+      style="padding-top: 10rem; padding-bottom: 5rem"
+    >
+      <div class="container">
+        <div class="row justify-content-center w-100 g-4">
+          <script src="../../js/sidebar.js"></script>
+          <div class="col-md-8 overflow-scroll" style="height: 700px">
+            <div class="card">
+              <div class="card-header">Make your Appointment</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <label for="category_title" class="form-label"
+                      >Category</label
+                    >
+                    <input
+                      class="form-control"
+                      list="categoryOptions"
+                      id="category_title"
+                      aria-describedby="categoryHelp"
+                      placeholder="Type to search for category..."
+                    />
+                    <datalist id="categoryOptions">
+                      <option value="Category 1" />
+                      <option value="Category 2" />
+                      <option value="Manicure" />
+                      <option value="Category 3" />
+                      <option value="Category 4" />
+                      <option value="Category 5" />
+                      <option value="Category 6" />
+                    </datalist>
+                    <div id="categoryHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label for="service_name" class="form-label">Service</label>
+                    <input
+                      class="form-control"
+                      list="serviceOptions"
+                      id="service_name"
+                      aria-describedby="serviceHelp"
+                      placeholder="Type to search for service..."
+                    />
+                    <datalist id="serviceOptions">
+                      <option value="Service 1" />
+                      <option value="Service 2" />
+                      <option value="Service 3" />
+                      <option value="Service 4" />
+                      <option value="Service 5" />
+                      <option value="Service 6" />
+                      <option value="Service 7" />
+                    </datalist>
+                    <div id="serviceHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-4 mb-2">
+                    <label for="appointmentYear" class="form-label">Year</label>
+                    <input
+                      class="form-control"
+                      list="appointmentYearDatalist"
+                      id="appointmentYear"
+                      placeholder="Type to select..."
+                    />
+                    <datalist id="appointmentYearDatalist"> </datalist>
+                  </div>
+                  <div class="col-md-5 mb-2">
+                    <label for="appointmentMonth" class="form-label"
+                      >Month</label
+                    >
+                    <input
+                      class="form-control"
+                      list="monthDatalist"
+                      id="appointmentMonth"
+                      placeholder="Type to select..."
+                    />
+                    <datalist id="monthDatalist"> </datalist>
+                  </div>
+                  <div class="col-md-3 mb-2">
+                    <label for="appointmentDate" class="form-label">Date</label>
+                    <input
+                      class="form-control"
+                      list="dateDatalist"
+                      id="appointmentDate"
+                      placeholder="Type to select..."
+                    />
+                    <datalist id="dateDatalist"> </datalist>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label for="staff" class="form-label">Staff</label>
+                    <input
+                      class="form-control"
+                      list="staffList"
+                      id="staff"
+                      placeholder="Type to select the staff..."
+                    />
+                    <datalist id="staffList"> </datalist>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <label
+                      for="timeSelect"
+                      class="form-label"
+                      >Time</label
+                    >
+                    <input
+                      type="time"
+                      class="form-control"
+                      id="timeSelect"
+                      aria-describedby="timeSelect_help"
+                      placeholder="Select time"
+                      min="10:00"
+                      max="19:00"
+                    />
+                  </div>
+                  <div class="col-md-12 mb-2">
+                    <button
+                      class="btn w-100 btn-primary"
+                      id="appointmentSearch"
+                    >
+                      Create
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="../../js/scripts.js"></script>
+  </body>
+</html>
