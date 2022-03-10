@@ -40,7 +40,23 @@ document.write(`
                 <div class="list-group-item accordion-item">
                     <h2 class="accordion-header" id="sidebarItemTwo">
                         <a class="accordion-button collapsed w-100 fw-normal" style="text-decoration:none;" href="">
+                            <!-- Show this only for admins -->
+                            Staffs
+                        </a>
+                    </h2>
+                </div>
+                <div class="list-group-item accordion-item">
+                    <h2 class="accordion-header" id="sidebarItemTwo">
+                        <a class="accordion-button collapsed w-100 fw-normal" style="text-decoration:none;" href="">
                             Services
+                        </a>
+                    </h2>
+                </div>
+                <div class="list-group-item accordion-item">
+                    <h2 class="accordion-header" id="sidebarItemTwo">
+                        <a class="accordion-button collapsed w-100 fw-normal" style="text-decoration:none;" href="">
+                            <!-- Show this only for admins -->
+                            Inventory
                         </a>
                     </h2>
                 </div>

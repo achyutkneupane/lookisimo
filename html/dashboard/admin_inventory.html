@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Lookisimo</title>
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../css/main.css" />
+</head>
+
+<body class="bg-white">
+  <script src="../../js/navbar.js"></script>
+  <div class="vw-100 bg-white text-black" style="padding-top: 10rem; padding-bottom: 5rem">
+    <div class="container">
+      <div class="row justify-content-center w-100 g-4">
+        <script src="../../js/sidebar.js"></script>
+        <div class="col-md-8 overflow-scroll" style="height: 700px">
+          <div class="card">
+            <div class="card-header">Add Product Type</div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3">
+                  <label for="product_type_title" class="form-label">Product Type Title</label>
+                  <input type="text" class="form-control" id="product_type_title" aria-describedby="productTypeTitleHelp"
+                    placeholder="Enter Product Type Title" />
+                  <div id="productTypeTitleHelp" class="form-text text-danger">
+                    <!-- Add error text here -->
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">+ Add</button>
+              </form>
+            </div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-header">Add Product</div>
+            <div class="card-body">
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="product_name" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="product_name" aria-describedby="productNameHelp"
+                      placeholder="Enter Product Name" />
+                    <div id="productNameHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="product_type" class="form-label">Product Type</label>
+                    <input class="form-control" list="productAddTypes" id="product_type" aria-describedby="productTypeHelp"
+                      placeholder="Type to search for category..." />
+                    <datalist id="productAddTypes">
+                      <option value="Type 1" />
+                      <option value="Type 2" />
+                    </datalist>
+                    <div id="productTypeHelp" class="form-text text-danger">
+                      <!-- Add error text here -->
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text">Rs. </span>
+                      <input type="number" step="0.01" class="form-control" aria-label="Amount in Rupees"
+                        id="price" aria-describedby="priceHelp" placeholder="Price (in Rupees)" />
+                      <div id="priceHelp" class="form-text text-danger">
+                        <!-- Add error text here -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                      <input type="number" class="form-control" aria-label="Quatity"
+                        id="quantity" aria-describedby="quantityHelp" placeholder="Quantity" />
+                      <div id="quantityHelp" class="form-text text-danger">
+                        <!-- Add error text here -->
+                      </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">+ Add</button>
+              </form>
+            </div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-header">Product List</div>
+            <div class="card-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product #</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Type</th>
+                    <th scope="col">Full Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="my-auto">
+                    <th scope="row">1</th>
+                    <td>Product Name 1</td>
+                    <td>Product Type 1</td>
+                    <td class="fw-bold">Rs. 200</td>
+                    <td>25</td>
+                    <td class="d-flex flex-row gap-2">
+                      <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                        data-bs-target="#product1Edit">
+                        Edit
+                      </button>
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#product1Delete">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <!-- Edit Modal -->
+  <div class="modal fade" id="product1Edit" tabindex="-1" aria-labelledby="product1EditLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="product1EditLabel">
+            Edit Product Name 1
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="product_name" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="product_name" aria-describedby="productNameHelp"
+                  placeholder="Enter Product Name" value="Product Name 1" />
+                <div id="productNameHelp" class="form-text text-danger">
+                  <!-- Add error text here -->
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="product_type" class="form-label">Product Type</label>
+                <input class="form-control" list="productEditTypes" id="product_type" aria-describedby="productTypeHelp"
+                  placeholder="Type to search for category..." value="Product Type 1" />
+                <datalist id="productEditTypes">
+                  <option value="Product Type 1" />
+                  <option value="Product Type 2" />
+                </datalist>
+                <div id="productTypeHelp" class="form-text text-danger">
+                  <!-- Add error text here -->
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="price" class="form-label">Price</label>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Rs. </span>
+                  <input type="number" step="0.01" class="form-control" aria-label="Amount in Rupees"
+                    id="price" aria-describedby="priceHelp" placeholder="Price (in Rupees)" value="200" />
+                  <div id="priceHelp" class="form-text text-danger">
+                    <!-- Add error text here -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                  <input type="number" class="form-control" aria-label="Quatity"
+                    id="quantity" aria-describedby="quantityHelp" placeholder="Quantity" value="25" />
+                  <div id="quantityHelp" class="form-text text-danger">
+                    <!-- Add error text here -->
+                  </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-warning">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="product1Delete" tabindex="-1" aria-labelledby="product1DeleteLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="product1DeleteLabel">
+            Delete Product Name 1
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Do you want to delete Product Name 1?</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../bootstrap/js/bootstrap.min.js" defer></script>
+</body>
+
+</html>
