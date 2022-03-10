@@ -1,5 +1,4 @@
-now = new Date().getTimezoneOffset();
-console.log(now);
+now = new Date();
 nowYear = now.getFullYear();
 
 // Year selector in date of birth
